@@ -1,0 +1,18 @@
+{
+  "name": "brooklynjs-gobble",
+  "description": "Why everyone should use Gobble",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gobble": "^0.5.9",
+    "gobble-amdclean": "^0.1.0",
+    "gobble-es6-transpiler": "^0.1.0",
+    "gobble-esperanto": "^0.1.0",
+    "gobble-ractive": "^0.1.0",
+    "gobble-requirejs": "^0.2.0",
+    "gobble-sass": "^0.2.0"
+  },
+  "dependencies": {
+    "ractive": "^0.5.7",
+    "ractive-transitions-fade": "^0.1.2"
+  }
+}

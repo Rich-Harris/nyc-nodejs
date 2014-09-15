@@ -1,0 +1,100 @@
+<div class='presentation'>
+	{{yield}}
+</div>
+
+
+<style>
+	.presentation {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+	}
+</style>
+
+
+<script>
+	component.exports = {
+		init: function () {
+			this.container = this.find( '.presentation' );
+			this.slides = this.findAllComponents( 'slide' );
+
+			this.observe( 'scrollTop', st => this.container.scrollTop = st );
+
+			window.addEventListener( 'keydown', event => {
+				var i, slide;
+
+				if ( event.which < 37 || event.which > 40 ) {
+					return;
+				}
+
+				event.preventDefault();
+
+				// get current slide
+				i = this.currentSlide();
+				slide = this.slides[i];
+
+				switch ( event.which ) {
+					case 39:
+						if ( slide.next() ) {
+							return;
+						}
+
+						this.goto( i + 1 );
+						break;
+
+					case 37:
+						if ( slide.previous() ) {
+							return;
+						}
+
+						this.goto( i - 1, true );
+						break;
+
+					case 40:
+						this.goto( i + 1 );
+						break;
+
+					case 38:
+						this.goto( i - 1, true );
+						break;
+				}
+			});
+		},
+
+		currentSlide: function () {
+			var i = this.slides.length;
+			while ( i-- ) {
+				if ( this.slides[i].isCurrent() ) {
+					return i;
+				}
+			}
+
+			throw new Error( 'An impossible situation occurred.' );
+		},
+
+		goto: function ( i, back ) {
+			var slide, bcr, currentScrollTop, targetScrollTop;
+
+			i = Math.max( 0, Math.min( i, this.slides.length - 1 ) );
+			slide = this.slides[i];
+
+			bcr = slide.bcr();
+
+			currentScrollTop = this.container.scrollTop;
+			targetScrollTop = currentScrollTop + bcr.top;
+
+			this.set( 'scrollTop', currentScrollTop );
+			this.animate( 'scrollTop', targetScrollTop, {
+				easing: 'easeOut',
+				duration: 10 * Math.sqrt( Math.abs( currentScrollTop - targetScrollTop ) )
+			});
+
+			if ( back ) {
+				slide.gotoLastStep();
+			} else {
+				slide.gotoFirstStep();
+			}
+		}
+	};
+</script>

@@ -1,0 +1,544 @@
+<link rel='ractive' href='./presentation.html'>
+<link rel='ractive' href='./slide.html'>
+
+<presentation>
+	<slide>
+		<div class='centered'>
+			<h1 class='hero'>Gobble</h1>
+			<img src='images/gobble-logo.svg' style='max-width: 100%; max-height: 50vh;'>
+			<p>Yeah, it's another build tool. Sorry.</p>
+		</div>
+	</slide>
+
+	<slide
+		bg='{{ ({ 1: "white", 2: "#e48632", 3: "#ed4846", 4: "#59863B" })[ slide2step ] }}'
+		fg='{{ ({ 1: "", 2: "#453015", 3: "white", 4: "white" })[ slide2step ] }}'
+		img='{{ ({ 1: "images/makefile.png", 2: "images/gruntfile.png", 3: "images/gulpfile.png", 4: "images/brocfile.png" })[ slide2step ] }}'
+		style='transition: background-color 0.4s;' currentStep='{{slide2step}}' steps='4'
+	>
+		<h1>A brief history lesson</h1>
+
+		<!-- force preload -->
+		<div class='hidden'>
+			<img src='images/empowered-by-gnu.svg'>
+			<img src='images/grunt-logo.svg'>
+			<img src='images/gulp-logo-white.svg'>
+			<img src='images/broccoli-logo-white.svg'>
+		</div>
+
+		<div>
+			{{#if slide2step === 1}}
+				<div class='centered' style='padding-top: 3em;'>
+					<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/empowered-by-gnu.svg'>
+				</div>
+			{{/if}}
+
+			{{#if slide2step === 2}}
+				<div class='centered' style='padding-top: 3em;'>
+					<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/grunt-logo.svg'>
+				</div>
+			{{/if}}
+
+			{{#if slide2step === 3}}
+				<div class='centered' style='padding-top: 3em;'>
+					<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/gulp-logo-white.svg'>
+				</div>
+			{{/if}}
+
+			{{#if slide2step === 4}}
+				<div class='centered' style='padding-top: 3em;'>
+					<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/broccoli-logo-white.svg'>
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+	<slide currentStep='{{slide3step}}' steps='3'>
+		<h1>Grunt is not a build tool!</h1>
+
+		<div class='container'>
+			<div class='left'>
+				<div class='centered'>
+					{{#if slide3step >= 2 }}
+						<img intro-outro='scale' src='images/gulp-chef.svg' class='chef-butler'>
+					{{/if}}
+				</div>
+			</div>
+
+			<div class='right'>
+				<div class='centered'>
+					{{#if slide3step === 3 }}
+						<img intro-outro='scale' src='images/grunt-butler.svg' class='chef-butler'>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</slide>
+
+	<slide>
+		<h1>Demo time!</h1>
+
+		<div class='centered'>
+			<img src='images/gobble-logo.svg'>
+		</div>
+	</slide>
+
+
+	<slide bg='black' fg='white' img='images/headbanging.gif' currentStep='{{slide4step}}' steps='3'>
+		<h1>Optimizing for developer sanity</h1>
+
+		<div class='container' style='overflow-y: auto;'>
+			{{#if slide4step >= 2 }}
+				<div intro-outro='fade' class='max' style='background-color: rgba(0,0,0,0.5);'>
+					{{#if slide4step === 2 }}
+						<div class='scrollable' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+							<p>If you optimise for developer sanity, you're forced to consider performance and correctness.</p>
+							<p>If you optimise for performance or correctness, you WILL sacrifice developer sanity.</p>
+							<p>So optimise for developer sanity.</p>
+						</div>
+					{{/if}}
+
+					{{#if slide4step === 3 }}
+						<div class='scrollable' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+							<ul>
+								<li>Auto-installing plugins</li>
+								<li>Watching gobblefile</li>
+								<li>Watching source files</li>
+								<li>LiveReload</li>
+								<li>Gracefully error recovery</li>
+								<li>Easy inspecting</li>
+								<li>Sane temporary folder names</li>
+								<li>Constant feedback</li>
+							</ul>
+						</div>
+					{{/if}}
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+
+	<slide fg='white' img='images/great-wall.jpg' currentStep='{{slide5step}}' steps='3'>
+		<!-- preload -->
+		<div class='hidden'>
+			<img src='images/popularity/grunt.png'>
+			<img src='images/popularity/gulp.png'>
+			<img src='images/popularity/broccoli.png'>
+			<img src='images/popularity/gobble.png'>
+		</div>
+
+		<h1>Barriers to entry</h1>
+
+		<div class='container'>
+			{{#if slide5step >= 2 }}
+				<table intro-outro='fade' class='centered' style='background-color: white; color: #333;'>
+					<tr><td style='width: 25%;'>Grunt</td><td style='width: 25%;'>3,454 plugins</td><td style='width: 50%;'><img src='images/popularity/grunt.png'></td></tr>
+					<tr><td style='width: 25%;'>Gulp</td><td style='width: 25%;'>780 plugins</td><td style='width: 50%;'><img src='images/popularity/gulp.png'></td></tr>
+					<tr><td style='width: 25%;'>Broccoli</td><td style='width: 25%;'>130 plugins</td><td style='width: 50%;'><img src='images/popularity/broccoli.png'></td></tr>
+					<tr><td style='width: 25%;'>Gobble</td><td style='width: 25%;'>14 plugins</td><td style='width: 50%;'><img src='images/popularity/gobble.png'></td></tr>
+				</table>
+			{{/if}}
+
+			{{#if slide5step === 3 }}
+				<div class='centered'>
+					<div intro-outro='scale'>
+						<p style='width: 20em; transform: rotate(-6deg); font-size: 4em; margin: 0; color: #d00; text-shadow: 0 0 15px white, 0 0 15px white, 0 0 15px white;'>The 'ecosystem fallacy'</p>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+	<slide fg='white'>
+		<!-- preload -->
+		<img src='images/unicorn.png' class='hidden'>
+
+		<div class='max' on-click='toggleVideo'>
+			<video src='bugslife.mp4' class='centered' style='min-width: 100vw; min-height: 100vh;' on-timeupdate='set("videoTime",event.original.srcElement.currentTime)'></video>
+			<h1>Single points of failure</h1>
+
+			<div style='position: absolute; top: 0; left: 0; right: 0; bottom: 0;'>
+				{{#if videoTime > 6.2 && videoTime < 8.2}}
+					<div class='caption' intro-outro='scale:200' style='left: 10%; top: 50%;'>
+						<p>No! Harry, no!</p>
+						<p>Don't look at npm and GitHub!</p>
+					</div>
+				{{/if}}
+
+				{{#if videoTime > 8.8 && videoTime < 13}}
+					<div class='caption' intro-outro='scale:200' style='left: 40%; top: 50%;'>
+						<p>I can't help it... they're so beautiful!</p>
+					</div>
+				{{/if}}
+
+				{{#if videoTime > 14}}
+					<div class='centered' intro-outro='fade'>
+						<img src='images/unicorn.png'>
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</slide>
+
+
+	<slide img='images/failwhale.jpg'></slide>
+
+	<slide currentStep='{{slide6step}}' steps='2'>
+		<div class='left'>
+			<div class='centered'>
+				<img src='images/davewiner.jpg'>
+				<p>Dave Winer, internet hero</p>
+			</div>
+		</div>
+
+		<div class='right'>
+			{{#if slide6step === 2 }}
+				<div class='centered'>
+					<p intro='scale' outro='fade' style='font-size: 4em;'>'blorking'</p>
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+
+	<slide>
+		<div class='centered'>
+			<p>Build tools, at the moment, are<br>a little bit SPOFfy.</p>
+		</div>
+	</slide>
+
+	<slide bg='white' currentStep='{{slide7step}}' steps='2'>
+		<div class='max'>
+			{{#if slide7step === 2 }}
+				<div class='left'>
+					<div class='top picture-frame'>
+						<div intro-outro='scale:{delay:0}' class='picture' style='background-image: url(images/knife.jpg)'></div>
+					</div>
+
+					<div class='bottom picture-frame'>
+						<div intro-outro='scale:{delay:100}' class='picture' style='background-image: url(images/tennis.jpg)'></div>
+					</div>
+				</div>
+
+				<div class='right'>
+					<div class='top picture-frame'>
+						<div intro-outro='scale:{delay:50}' class='picture' style='background-image: url(images/cleaning-brushes.jpg)'></div>
+					</div>
+
+					<div class='bottom picture-frame'>
+						<img intro-outro='scale:{delay:150,duration:200}' src='images/trombone.jpg' style='height: 100%;'>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+	<slide bg='black'>
+		<div class='container scrollable' style='padding: 2em;'>
+			<img src='images/twitter-convo.png' class='scroll-image'>
+		</div>
+	</slide>
+
+	<slide bg='#ddd' currentStep='{{slide8step}}' steps='5'>
+		<!-- preload -->
+		<div class='hidden'>
+			<img src='images/uglify-comparison/gulp.png'>
+			<img src='images/uglify-comparison/broccoli.png'>
+			<img src='images/uglify-comparison/grunt.png'>
+			<img src='images/uglify-comparison/gobble.png'>
+		</div>
+
+		<h1>Solution 1: Radical simplicity</h1>
+
+		<div class='container'>
+			<div class='max'>
+				{{#if slide8step === 2}}
+					<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Gulp: 68 SLOC</h2>
+					<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/gulp.png)'></div>
+				{{/if}}
+
+				{{#if slide8step === 3}}
+					<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Broccoli: 21 SLOC</h2>
+					<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/broccoli.png)'></div>
+				{{/if}}
+
+				{{#if slide8step === 4}}
+					<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Grunt: 310 SLOC!!!</h2>
+					<div class='left'>
+						<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/grunt-1.png)'></div>
+					</div>
+
+					<div class='right'>
+						<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/grunt-2.png)'></div>
+					</div>
+				{{/if}}
+
+				{{#if slide8step === 5}}
+					<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Gobble: 8 SLOC</h2>
+					<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/gobble.png)'></div>
+				{{/if}}
+			</div>
+		</div>
+	</slide>
+
+
+	<slide bg='#333' fg='white' currentStep='{{slide9step}}' steps='3'>
+		<h1>Solution 2: Standardisation</h1>
+
+		<div class='container'>
+			{{#if slide9step === 2}}
+				<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+					<p>It's what the web was built on.</p>
+					<p>It's how email became a dominant form of communication.</p>
+					<p>It's what we've failed to do with Twitter.</p>
+				</div>
+			{{/if}}
+
+			{{#if slide9step === 3}}
+				<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+					<ul>
+						<li>jQuery / Zepto / Ender</li>
+						<li>Underscore / Lodash</li>
+						<li>Mustache / Hogan / Handlebars / Ractive</li>
+					</ul>
+				</div>
+			{{/if}}
+		</div>
+	</slide>
+
+	<slide>
+		<h1>In summary:</h1>
+
+		<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+			<ul>
+				<li>Optimise for developer sanity!</li>
+				<li>Standards are the answer, not ecosystem dependence</li>
+				<li>We are creators, not consumers. Act like it</li>
+				<li>Help me build Gobble: <a href='https://github.com/gobblejs/gobble'>github.com/gobblejs/gobble</a></li>
+				<li>You should follow <a href='http://twitter.com/GobbleJS'>@GobbleJS</a></li>
+				<li>(Oh and I'm <a href='http://twitter.com/Rich_Harris'>@Rich_Harris</li>, I work at <a href='http://theguardian.com'>theguardian.com</a>)</li>
+			</ul>
+		</div>
+	</slide>
+</presentation>
+
+
+<style>
+	.hidden {
+		display: none;
+	}
+
+	h1 {
+		position: absolute;
+		width: 100%;
+		left: 0;
+	}
+
+	.hero {
+		position: relative;
+	}
+
+	.left, .right {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		top: 0;
+	}
+
+	.left {
+		left: 0;
+	}
+
+	.right {
+		right: 0;
+	}
+
+	.top, .bottom {
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		left: 0;
+	}
+
+	.top {
+		top: 0;
+	}
+
+	.bottom {
+		bottom: 0;
+	}
+
+	.container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 10vw 5vw 5vw 5vw;
+		box-sizing: border-box;
+	}
+
+	.max {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.chef-butler {
+		width: 35vw;
+		max-width: none;
+		max-height: none;
+	}
+
+	.scrollable {
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		padding: 0;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	table {
+		text-align: left;
+		opacity: 0.9;
+		box-shadow: 0 0 5px black;
+	}
+
+	table img {
+		width: 100%;
+	}
+
+	td {
+		padding: 0.5em 1em;
+	}
+
+	.caption {
+		position: absolute;
+	}
+
+	.caption p {
+		font-family: arial, sans-serif;
+		font-size: 1.4em;
+		line-height: 1;
+		margin: 0 0 0.5em 0;
+		max-width: 40%;
+		text-shadow: 0 0 15px black, 0 0 15px black, 0 0 15px black;
+	}
+
+	.picture-frame {
+		padding: 0.5em;
+		box-sizing: border-box;
+	}
+
+	.picture {
+		background: no-repeat 50% 50%;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+	}
+
+	.scroll-image {
+		position: relative;
+		width: 100%;
+		-webkit-transition: all 1s ease-out;
+		-moz-transition: all 1s ease-out;
+		-ms-transition: all 1s ease-out;
+		-o-transition: all 1s ease-out;
+		transition: all 1s ease-out;
+	}
+
+	.comparison {
+		background: no-repeat 50% 50%;
+		background-size: contain;
+		width: 100%;
+		height: 100%;
+	}
+
+	.tmp-please-fix-me {
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+		background-color: rgba(255,255,255,0.4);
+		padding: 0.5em;
+		box-sizing: border-box;
+	}
+
+	.text-block {
+		width: 100%;
+		padding: 1rem 10%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	ul {
+		font-size: 1.2em;
+	}
+</style>
+
+
+<script>
+	require( 'ractive-transitions-fade' );
+	require( 'ractive-transitions-typewriter' );
+
+	component.exports = {
+		init: function () {
+			var video = this.find( 'video' );
+
+			this.on({
+				toggleVideo: function ( event ) {
+					var src;
+
+					if ( !video.paused ) {
+						video.pause();
+						src = video.src;
+
+						video.src = '';
+						video.src = src;
+					} else {
+						video.play();
+					}
+				}
+			});
+		},
+
+		transitions: {
+			scale: function ( t, params ) {
+				var inside, outside, from, to;
+
+				params = t.processParams( params, {
+					scale: 0.7,
+					opacity: 0,
+					duration: 200,
+					easing: 'easeOut',
+					delay: 0
+				});
+
+				inside = {
+					opacity: t.getStyle( 'opacity' ),
+					transform: 'scale(1)'
+				};
+
+				outside = {
+					transform: 'scale(' + params.scale + ')',
+					opacity: params.opacity
+				};
+
+				if ( t.isIntro ) {
+					from = outside;
+					to = inside;
+				} else {
+					from = inside;
+					to = outside;
+				}
+
+				t.setStyle( from );
+
+				setTimeout( function () {
+					t.animateStyle( to, {
+						duration: params.duration,
+						easing: params.easing
+					}).then( t.complete );
+				}, params.delay );
+			}
+		}
+	};
+</script>
