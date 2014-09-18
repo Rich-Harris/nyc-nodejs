@@ -1,0 +1,23 @@
+<link rel='ractive' href='../slide.html'>
+
+<slide currentStep='{{slide3step}}' steps='3'>
+	<h1>Grunt is not a build tool!</h1>
+
+	<div class='container'>
+		<div class='left'>
+			<div class='centered'>
+				{{#if slide3step >= 2 }}
+					<img intro-outro='scale' src='images/gulp-chef.svg' class='chef-butler'>
+				{{/if}}
+			</div>
+		</div>
+
+		<div class='right'>
+			<div class='centered'>
+				{{#if slide3step === 3 }}
+					<img intro-outro='scale' src='images/grunt-butler.svg' class='chef-butler'>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</slide>

@@ -1,0 +1,18 @@
+<link rel='ractive' href='../slide.html'>
+
+<slide currentStep='{{slide6step}}' steps='2'>
+	<div class='left'>
+		<div class='centered'>
+			<img src='images/davewiner.jpg'>
+			<p>Dave Winer, internet hero</p>
+		</div>
+	</div>
+
+	<div class='right'>
+		{{#if slide6step === 2 }}
+			<div class='centered'>
+				<p intro='scale' outro='fade' style='font-size: 4em;'>'blorking'</p>
+			</div>
+		{{/if}}
+	</div>
+</slide>

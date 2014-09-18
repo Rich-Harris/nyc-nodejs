@@ -9,10 +9,13 @@
     "gobble-esperanto": "^0.1.0",
     "gobble-ractive": "^0.1.0",
     "gobble-requirejs": "^0.2.0",
-    "gobble-sass": "^0.2.0"
+    "gobble-sass": "^0.2.0",
+    "list-npm-paths": "^0.1.0",
+    "gobble-browserify": "^0.1.0"
   },
   "dependencies": {
     "ractive": "^0.5.7",
-    "ractive-transitions-fade": "^0.1.2"
+    "ractive-transitions-fade": "^0.1.2",
+    "ractive-transitions-typewriter": "^0.1.2"
   }
 }

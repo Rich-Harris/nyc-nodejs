@@ -1,0 +1,27 @@
+<link rel='ractive' href='../slide.html'>
+
+<slide bg='white' currentStep='{{slide7step}}' steps='2'>
+	<div class='max'>
+		{{#if slide7step === 2 }}
+			<div class='left'>
+				<div class='top picture-frame'>
+					<div intro-outro='scale:{delay:0}' class='picture' style='background-image: url(images/knife.jpg)'></div>
+				</div>
+
+				<div class='bottom picture-frame'>
+					<div intro-outro='scale:{delay:100}' class='picture' style='background-image: url(images/tennis.jpg)'></div>
+				</div>
+			</div>
+
+			<div class='right'>
+				<div class='top picture-frame'>
+					<div intro-outro='scale:{delay:50}' class='picture' style='background-image: url(images/cleaning-brushes.jpg)'></div>
+				</div>
+
+				<div class='bottom picture-frame'>
+					<img intro-outro='scale:{delay:150,duration:200}' src='images/trombone.jpg' style='height: 100%;'>
+				</div>
+			</div>
+		{{/if}}
+	</div>
+</slide>

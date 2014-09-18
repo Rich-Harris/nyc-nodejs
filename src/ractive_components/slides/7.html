@@ -1,0 +1,56 @@
+<link rel='ractive' href='../slide.html'>
+
+<slide fg='white'>
+	<!-- preload -->
+	<img src='images/unicorn.png' class='hidden'>
+
+	<div class='max' on-click='toggleVideo'>
+		<video src='bugslife.mp4' class='centered' style='min-width: 100vw; min-height: 100vh;' on-timeupdate='set("videoTime",event.original.srcElement.currentTime)'></video>
+		<h1>Single points of failure</h1>
+
+		<div style='position: absolute; top: 0; left: 0; right: 0; bottom: 0;'>
+			{{#if videoTime > 6.2 && videoTime < 8.2}}
+				<div class='caption' intro-outro='scale:200' style='left: 10%; top: 50%;'>
+					<p>No! Harry, no!</p>
+					<p>Don't look at npm and GitHub!</p>
+				</div>
+			{{/if}}
+
+			{{#if videoTime > 8.8 && videoTime < 13}}
+				<div class='caption' intro-outro='scale:200' style='left: 40%; top: 50%;'>
+					<p>I can't help it... they're so beautiful!</p>
+				</div>
+			{{/if}}
+
+			{{#if videoTime > 14}}
+				<div class='centered' intro-outro='fade'>
+					<img src='images/unicorn.png'>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</slide>
+
+<script>
+	component.exports = {
+		init: function () {
+			var video = this.find( 'video' );
+
+			this.on({
+				toggleVideo: function ( event ) {
+					var src;
+
+					if ( !video.paused ) {
+						video.pause();
+						src = video.src;
+
+						video.src = '';
+						video.src = src;
+					} else {
+						video.play();
+					}
+				}
+			});
+		}
+	};
+</script>
