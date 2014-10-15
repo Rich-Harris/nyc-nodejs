@@ -1,107 +1,54 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide
-	bg='{{ ({ 1: "white", 2: "white", 3: "#e48632", 4: "#e48632", 5: "#ed4846", 6: "#ed4846", 7: "#59863B" })[ step ] }}'
-	fg='{{ ({ 1: "", 2: "", 3: "#453015", 4: "#453015", 5: "white", 6: "white", 7: "white" })[ step ] }}'
-	img='{{ ({ 1: "images/makefile.png", 2: "images/makefile.png", 3: "images/gruntfile.png", 4: "images/gruntfile.png", 5: "images/gulpfile.png", 6: "images/gulpfile.png", 7: "images/brocfile.png" })[ step ] }}'
-	style='transition: background-color 0.4s;' currentStep='{{step}}' steps='7'
->
-	<h1>A brief history lesson</h1>
-
-	<!-- force preload -->
+<slide currentStep='{{currentStep}}' steps='3'>
+	<!-- preload -->
 	<div class='hidden'>
-		<img src='images/empowered-by-gnu.svg'>
-		<img src='images/grunt-logo.svg'>
-		<img src='images/gulp-logo-white.svg'>
-		<img src='images/broccoli-logo-white.svg'>
-
-		<img src='images/masochist.gif'>
-		<img src='images/kramer-yeah.gif'>
-		<img src='images/masochist.gif'>
+		<img src='images/thegrauniad.svg'>
+		<img src='images/ractive.svg'>
 	</div>
 
-	<div class='max'>
-		{{#if step === 1 || step === 2}}
-			<div class='centered' style='padding-top: 3em;'>
-				<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/empowered-by-gnu.svg'>
+	<div class='centered'>
+		{{#if currentStep > 0}}
+			<div class='item' intro-outro='slide'>
+				<p class='item'>Pleased to meet you, I'm @Rich_Harris</p>
 			</div>
-
-			{{#if step === 2}}
-				<img class='centered' intro-outro='fade' src='images/masochist.gif'>
-			{{/if}}
 		{{/if}}
 
-		{{#if step === 3 || step === 4}}
-			<div class='centered' style='padding-top: 3em;'>
-				<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/grunt-logo.svg'>
+		{{#if currentStep > 1}}
+			<div class='item' intro-outro='slide'>
+				<img class='item' src='images/thegrauniad.svg'>
 			</div>
-
-			{{#if step === 4}}
-				<div class='iknowthis' intro-outro='fade'>
-					<div class='inner'>
-						<img class='centered' src='images/iknowthis.gif'>
-						<p class='one'>It's a JavaScript system</p>
-						<p class='two'>I know this</p>
-					</div>
-				</div>
-			{{/if}}
 		{{/if}}
 
-		{{#if step === 5 || step === 6}}
-			<div class='centered' style='padding-top: 3em;'>
-				<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/gulp-logo-white.svg'>
-			</div>
-
-			{{#if step === 6}}
-				<img class='centered' intro-outro='fade' src='images/kramer-yeah.gif'>
-			{{/if}}
-		{{/if}}
-
-		{{#if step === 7}}
-			<div class='centered' style='padding-top: 3em;'>
-				<img intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' src='images/broccoli-logo-white.svg'>
+		{{#if currentStep > 2}}
+			<div class='item' intro-outro='slide'>
+				<img class='item' src='images/ractive.svg'>
 			</div>
 		{{/if}}
 	</div>
+
+	<!-- <div class='max'>
+		{{#if currentStep === 2}}
+			<div class='centered jed' intro-outro='fade' style='width: 100%;'>
+				<img class='mugshot' src='images/jed-mugshot.jpeg'>
+				<img class='quote' src='images/jed-quote.png'>
+			</div>
+		{{/if}}
+	</div> -->
 </slide>
 
-
 <style>
-	.iknowthis {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		padding: 5vw;
-		box-sizing: border-box;
+	.item {
+		height: 20vh;
 	}
 
-	.iknowthis .inner {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-color: black;
-	}
-
-	.iknowthis img {
-		width: 100%;
-	}
-
-	.one, .two {
-		position: absolute;
-		width: 100%;
-		text-align: center;
+	p {
 		font-size: 2em;
-		font-family: Impact;
-		color: white;
+		margin: 0;
 		line-height: 1;
-		text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
-	}
-
-	.one {
-		top: 0.5em;
-	}
-
-	.two {
-		bottom: 0.5em;
 	}
 </style>
+
+<script>
+	require( 'ractive-transitions-slide' );
+</script>

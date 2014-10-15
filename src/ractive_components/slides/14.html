@@ -1,25 +1,43 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide bg='#333' fg='white' currentStep='{{slide9step}}' steps='3'>
-	<h1>Solution 2: Standardisation</h1>
+<slide bg='#ddd' currentStep='{{slide8step}}' steps='5'>
+	<!-- preload -->
+	<div class='hidden'>
+		<img src='images/uglify-comparison/gulp.png'>
+		<img src='images/uglify-comparison/broccoli.png'>
+		<img src='images/uglify-comparison/grunt.png'>
+		<img src='images/uglify-comparison/gobble.png'>
+	</div>
+
+	<h1>Solution 1: Radical simplicity</h1>
 
 	<div class='container'>
-		{{#if slide9step === 2}}
-			<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
-				<p>It's what the web was built on.</p>
-				<p>It's how email became a dominant form of communication.</p>
-				<p>It's what we've failed to do with Twitter.</p>
-			</div>
-		{{/if}}
+		<div class='max'>
+			{{#if slide8step === 2}}
+				<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Gulp: 68 SLOC</h2>
+				<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/gulp.png)'></div>
+			{{/if}}
 
-		{{#if slide9step === 3}}
-			<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
-				<ul>
-					<li>jQuery / Zepto / Ender</li>
-					<li>Underscore / Lodash</li>
-					<li>Mustache / Hogan / Handlebars / Ractive</li>
-				</ul>
-			</div>
-		{{/if}}
+			{{#if slide8step === 3}}
+				<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Broccoli: 21 SLOC</h2>
+				<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/broccoli.png)'></div>
+			{{/if}}
+
+			{{#if slide8step === 4}}
+				<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Grunt: 310 SLOC!!!</h2>
+				<div class='left'>
+					<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/grunt-1.png)'></div>
+				</div>
+
+				<div class='right'>
+					<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/grunt-2.png)'></div>
+				</div>
+			{{/if}}
+
+			{{#if slide8step === 5}}
+				<h2 intro-outro='fade' class='centered tmp-please-fix-me'>Uglifying JS with Gobble: 8 SLOC</h2>
+				<div intro='scale:{scale:0.7,duration:400}' outro='scale:{scale:1.2,duration:200}' class='comparison' style='background-image: url(images/uglify-comparison/gobble.png)'></div>
+			{{/if}}
+		</div>
 	</div>
 </slide>

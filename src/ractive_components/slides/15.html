@@ -1,16 +1,25 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide>
-	<h1>In summary:</h1>
+<slide bg='#333' fg='white' currentStep='{{slide9step}}' steps='3'>
+	<h1>Solution 2: Standardisation</h1>
 
-	<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
-		<ul>
-			<li>Optimise for developer sanity!</li>
-			<li>Standards are the answer, not ecosystem dependence</li>
-			<li>We are creators, not consumers. Act like it</li>
-			<li>Help me build Gobble: <a href='https://github.com/gobblejs/gobble'>github.com/gobblejs/gobble</a></li>
-			<li>You should follow <a href='http://twitter.com/GobbleJS'>@GobbleJS</a></li>
-			<li>(Oh and I'm <a href='http://twitter.com/Rich_Harris'>@Rich_Harris</li>, I work at <a href='http://theguardian.com'>theguardian.com</a>)</li>
-		</ul>
+	<div class='container'>
+		{{#if slide9step === 2}}
+			<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+				<p>It's what the web was built on.</p>
+				<p>It's how email became a dominant form of communication.</p>
+				<p>It's what we've failed to do with Twitter.</p>
+			</div>
+		{{/if}}
+
+		{{#if slide9step === 3}}
+			<div class='centered text-block' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+				<ul>
+					<li>jQuery / Zepto / Ender</li>
+					<li>Underscore / Lodash</li>
+					<li>Mustache / Hogan / Handlebars / Ractive</li>
+				</ul>
+			</div>
+		{{/if}}
 	</div>
 </slide>

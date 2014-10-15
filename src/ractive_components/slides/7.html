@@ -1,56 +1,32 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide fg='white'>
+<slide fg='white' img='images/great-wall.jpg' currentStep='{{slide5step}}' steps='3'>
 	<!-- preload -->
-	<img src='images/unicorn.png' class='hidden'>
+	<div class='hidden'>
+		<img src='images/popularity/grunt.png'>
+		<img src='images/popularity/gulp.png'>
+		<img src='images/popularity/broccoli.png'>
+		<img src='images/popularity/gobble.png'>
+	</div>
 
-	<div class='max' on-click='toggleVideo'>
-		<video src='bugslife.mp4' class='centered' style='min-width: 100vw; min-height: 100vh;' on-timeupdate='set("videoTime",event.original.srcElement.currentTime)'></video>
-		<h1>Single points of failure</h1>
+	<h1>Barriers to entry</h1>
 
-		<div style='position: absolute; top: 0; left: 0; right: 0; bottom: 0;'>
-			{{#if videoTime > 6.2 && videoTime < 8.2}}
-				<div class='caption' intro-outro='scale:200' style='left: 10%; top: 50%;'>
-					<p>No! Harry, no!</p>
-					<p>Don't look at npm and GitHub!</p>
+	<div class='container'>
+		{{#if slide5step >= 2 }}
+			<table intro-outro='fade' class='centered' style='background-color: white; color: #333;'>
+				<tr><td style='width: 25%;'>Grunt</td><td style='width: 25%;'>3,454 plugins</td><td style='width: 50%;'><img src='images/popularity/grunt.png'></td></tr>
+				<tr><td style='width: 25%;'>Gulp</td><td style='width: 25%;'>780 plugins</td><td style='width: 50%;'><img src='images/popularity/gulp.png'></td></tr>
+				<tr><td style='width: 25%;'>Broccoli</td><td style='width: 25%;'>130 plugins</td><td style='width: 50%;'><img src='images/popularity/broccoli.png'></td></tr>
+				<tr><td style='width: 25%;'>Gobble</td><td style='width: 25%;'>14 plugins</td><td style='width: 50%;'><img src='images/popularity/gobble.png'></td></tr>
+			</table>
+		{{/if}}
+
+		{{#if slide5step === 3 }}
+			<div class='centered'>
+				<div intro-outro='scale'>
+					<p style='width: 20em; transform: rotate(-6deg); font-size: 4em; margin: 0; color: #d00; text-shadow: 0 0 15px white, 0 0 15px white, 0 0 15px white;'>The 'ecosystem fallacy'</p>
 				</div>
-			{{/if}}
-
-			{{#if videoTime > 8.8 && videoTime < 13}}
-				<div class='caption' intro-outro='scale:200' style='left: 40%; top: 50%;'>
-					<p>I can't help it... they're so beautiful!</p>
-				</div>
-			{{/if}}
-
-			{{#if videoTime > 14}}
-				<div class='centered' intro-outro='fade'>
-					<img src='images/unicorn.png'>
-				</div>
-			{{/if}}
-		</div>
+			</div>
+		{{/if}}
 	</div>
 </slide>
-
-<script>
-	component.exports = {
-		init: function () {
-			var video = this.find( 'video' );
-
-			this.on({
-				toggleVideo: function ( event ) {
-					var src;
-
-					if ( !video.paused ) {
-						video.pause();
-						src = video.src;
-
-						video.src = '';
-						video.src = src;
-					} else {
-						video.play();
-					}
-				}
-			});
-		}
-	};
-</script>

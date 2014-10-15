@@ -1,31 +1,33 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide fg='white' img='images/great-wall.jpg' currentStep='{{slide5step}}' steps='3'>
-	<!-- preload -->
-	<div class='hidden'>
-		<img src='images/popularity/grunt.png'>
-		<img src='images/popularity/gulp.png'>
-		<img src='images/popularity/broccoli.png'>
-		<img src='images/popularity/gobble.png'>
-	</div>
+<slide bg='black' fg='white' img='images/headbanging.gif' currentStep='{{slide4step}}' steps='3'>
+	<h1>Optimizing for developer sanity</h1>
 
-	<h1>Barriers to entry</h1>
+	<div class='container' style='overflow-y: auto;'>
+		{{#if slide4step >= 2 }}
+			<div intro-outro='fade' class='max' style='background-color: rgba(0,0,0,0.5);'>
+				{{#if slide4step === 2 }}
+					<div class='scrollable' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+						<p>If you optimise for developer sanity, you're forced to consider performance and correctness.</p>
+						<p>If you optimise for performance or correctness, you WILL sacrifice developer sanity.</p>
+						<p>So optimise for developer sanity.</p>
+					</div>
+				{{/if}}
 
-	<div class='container'>
-		{{#if slide5step >= 2 }}
-			<table intro-outro='fade' class='centered' style='background-color: white; color: #333;'>
-				<tr><td style='width: 25%;'>Grunt</td><td style='width: 25%;'>3,454 plugins</td><td style='width: 50%;'><img src='images/popularity/grunt.png'></td></tr>
-				<tr><td style='width: 25%;'>Gulp</td><td style='width: 25%;'>780 plugins</td><td style='width: 50%;'><img src='images/popularity/gulp.png'></td></tr>
-				<tr><td style='width: 25%;'>Broccoli</td><td style='width: 25%;'>130 plugins</td><td style='width: 50%;'><img src='images/popularity/broccoli.png'></td></tr>
-				<tr><td style='width: 25%;'>Gobble</td><td style='width: 25%;'>14 plugins</td><td style='width: 50%;'><img src='images/popularity/gobble.png'></td></tr>
-			</table>
-		{{/if}}
-
-		{{#if slide5step === 3 }}
-			<div class='centered'>
-				<div intro-outro='scale'>
-					<p style='width: 20em; transform: rotate(-6deg); font-size: 4em; margin: 0; color: #d00; text-shadow: 0 0 15px white, 0 0 15px white, 0 0 15px white;'>The 'ecosystem fallacy'</p>
-				</div>
+				{{#if slide4step === 3 }}
+					<div class='scrollable' style='padding: 1rem 20%;' intro='typewriter:{speed:75}' outro='fade'>
+						<ul>
+							<li>Auto-installing plugins</li>
+							<li>Watching gobblefile</li>
+							<li>Watching source files</li>
+							<li>LiveReload</li>
+							<li>Gracefully error recovery</li>
+							<li>Easy inspecting</li>
+							<li>Sane temporary folder names</li>
+							<li>Constant feedback</li>
+						</ul>
+					</div>
+				{{/if}}
 			</div>
 		{{/if}}
 	</div>
