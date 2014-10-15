@@ -1,7 +1,0 @@
-{
-  "name": "gobble-example",
-  "version": "0.1.0",
-  "devDependencies": {
-    "gobble": "^0.5.3"
-  }
-}
