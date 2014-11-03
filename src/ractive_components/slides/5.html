@@ -1,9 +1,30 @@
 <link rel='ractive' href='../slide.html'>
 
-<slide>
+<slide steps='2' currentStep='{{currentStep}}'>
+	<!-- preload -->
+	<div class='hidden'>
+		<img src='images/tweet.png'>
+	</div>
+
 	<h1>Demo time!</h1>
 
 	<div class='centered'>
 		<img src='images/gobble-logo.svg'>
 	</div>
+
+	<div class='max'>
+		{{#if currentStep === 2}}
+			<img class='large centered' intro-outro='fade' src='images/tweet.png'>
+		{{/if}}
+	</div>
 </slide>
+
+<style>
+	.large {
+		width: 80%;
+	}
+</style>
+
+<script>
+	require( 'ractive-transitions-fade' );
+</script>

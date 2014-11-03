@@ -1,5 +1,5 @@
 {
-  "name": "brooklynjs-gobble",
+  "name": "nyc-nodejs",
   "description": "Why everyone should use Gobble",
   "version": "0.1.0",
   "devDependencies": {
